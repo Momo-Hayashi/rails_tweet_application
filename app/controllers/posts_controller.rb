@@ -20,6 +20,11 @@ class PostsController < ApplicationController
     redirect_to posts_path, notice: "つぶやきを削除しました！"
   end
   def update
+    if @post.update(post_params)
+      redirect_to posts_path, notice:"つぶやきを編集しました！"
+    else
+      render :edit
+    end
   end
 
   private
