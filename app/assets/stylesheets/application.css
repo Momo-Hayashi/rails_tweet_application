@@ -1,8 +1,14 @@
+html {
+  height: 100%;
+}
 body{
  color:orange;
  background-color:#1DA1F2;
  font-size:20px;
- padding-left: 1rem;
+ width: 980px;
+ margin: 0 auto;
+ min-height: 100%;
+ position: relative;
  }
  .new_tweet{
    width: 200px;
@@ -17,18 +23,33 @@ body{
    background-color: #B1B1B1;
    color: #fff;
  }
-
  .top_page td{
    padding: 1rem;
    background-color: white;
  }
-
 .content {
   width: 500px;
 }
-
  .choice {
   width: 30px;
   font-size:15px;
   text-align: center;
+ }
+ .margin{
+   padding-bottom: 50px;
+ }
+ .footer{
+   background-color: grey;
+   height: 50px;
+   width: 100%;
+   bottom: 0;
+   position: absolute;
+   display: table;
+ }
+ .footer p{
+   font-size: 1rem;
+   color: #fff;
+   text-align: center;
+   vertical-align: middle;
+   display: table-cell;
  }
