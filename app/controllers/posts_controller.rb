@@ -6,15 +6,22 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
   end
+  def confirm
+    @post = Post.new(post_params)
+    render :new if @post.invalid?
+  end
   def create
     @post = Post.new(post_params)
-    if @post.save
-      redirect_to posts_path, notice: "送信されました！"
-    else
+    if params[:back]
       render :new
+    else
+      if @post.save
+        redirect_to posts_path, notice: "送信されました！"
+      else
+        render :new
+      end
     end
   end
-
   def destroy
     @post.destroy
     redirect_to posts_path, notice: "つぶやきを削除しました！"
